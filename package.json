@@ -1,0 +1,92 @@
+{
+  "name": "commento",
+  "displayName": "Commento",
+  "description": "AI-powered code comment generator with multi-level documentation",
+  "version": "1.1.0",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Documentation"
+  ],
+  "icon": "images/icon-light.png",
+  "activationEvents": [
+    "onCommand:commento.generateConcise",
+    "onCommand:commento.generateDetailed"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commento.generateConcise",
+        "title": "Commento: Concise Comment"
+      },
+      {
+        "command": "commento.generateDetailed",
+        "title": "Commento: Detailed Comment"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Custom Theme",
+        "uiTheme": "vs",
+        "path": "./themes/theme-light.json"
+      },
+      {
+        "label": "Custom Theme Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/theme-dark.json"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "commento.generateConcise",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "commento.generateDetailed",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Commento",
+      "properties": {
+        "commento.apiKey": {
+          "type": "string",
+          "description": "Gemini API key from Google AI Studio",
+          "secure": true
+        },
+        "commento.includeExamples": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include usage examples in detailed comments"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext .ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.5.0"
+  }
+}
