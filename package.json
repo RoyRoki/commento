@@ -25,18 +25,10 @@
       {
         "command": "commento.generateDetailed",
         "title": "Commento: Detailed Comment"
-      }
-    ],
-    "themes": [
-      {
-        "label": "Custom Theme",
-        "uiTheme": "vs",
-        "path": "./themes/theme-light.json"
       },
       {
-        "label": "Custom Theme Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/theme-dark.json"
+        "command": "commento.openHomePage",
+        "title": "Commento: Home"
       }
     ],
     "menus": {
