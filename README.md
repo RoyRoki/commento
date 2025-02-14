@@ -1,64 +1,99 @@
 # commentov1
 
-This extension adds powerful comment management functionality to your Visual Studio Code workspace. It allows easy generation, editing, and management of comments in your codebase. With this extension, you can quickly insert structured comments and enhance the readability of your code.
+![Version](https://img.shields.io/visual-studio-marketplace/v/rokiroy.commento) 
+![Downloads](https://img.shields.io/visual-studio-marketplace/d/rokiroy.commento) 
+![License](https://img.shields.io/github/license/RoyRoki/commento)
+
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation and Setup](#installation-and-setup)
+- [Using Commento](#using-commento)
+- [Example Usage](#example-usage)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Configuration](#configuration)
+- [Known Issues](#known-issues)
+- [Release Notes](#release-notes)
+- [Change Log](#change-log)
+- [Open Source Contribution](#open-source-contribution)
+- [License](#license)
+
+## Introduction
+Commento is a VS Code extension that generates concise and detailed comments for your code using Google Gemini AI. This documentation will guide you through the setup and usage of the extension.
 
 ## Features
+- AI-powered comment generation using Google Gemini AI.
+- Supports both concise and detailed comment styles.
+- Easy integration with VS Code through command palette shortcuts.
+- Option to include usage examples in detailed comments.
+- Works with multiple programming languages.
+- Open-source.
 
-- **Generate Comments:** Automatically generate well-structured comments based on your code context.
-- **Remove Inappropriate Code:** Identifies and removes any unwanted or dangerous code snippets in comments.
-- **Customizable Comment Templates:** Customize comment templates based on project requirements.
-- **Inline Warnings:** Displays warnings when certain patterns are detected within comments.
-  
-> Tip: Take advantage of the extension by using it in combination with your existing development workflow!
+## Prerequisites
+- A valid Google Gemini API key
+- VS Code installed on your system
 
-## Requirements
+## Installation and Setup
+1. **Obtain API Key:** Get your API key from Google Gemini at [Google AI Studio](https://aistudio.google.com/app/apikey).
+2. **Configure API Key in VS Code:**
+   - Open VS Code.
+   - Click on the gear icon ⚙ in the lower left corner, then go to **Settings** (`Ctrl + ,` on Windows/Linux, `Cmd + ,` on Mac).
+   - In the search bar at the top, type `Commento`.
+   - Click on **Commento** in the Extensions section.
+   - Paste your API key into the provided field.
+   - Enable the checkbox **"Include usage examples in detailed comments"** if you want generated comments to include examples.
 
-- **Node.js**: Ensure you have [Node.js](https://nodejs.org/) installed (v16 or higher recommended).
-- **Visual Studio Code**: This extension is compatible with Visual Studio Code versions 1.50 and above.
-- **npm**: Make sure npm is installed for managing dependencies.
+## Using Commento
+### Generating Comments
+1. Select the function, class, or block of code where you want to generate comments.
+2. Press `Ctrl + Shift + P` to open the command palette.
+3. Type `> Commento:` and select one of the following commands:
+   
+   - **Commento: Concise Comment** – Generates a short, one-line comment explaining the purpose of the selected code.
+   - **Commento: Detailed Comment** – Generates a more comprehensive, multi-line comment describing the functionality, parameters, and possible outcomes of the code.
 
-## Extension Settings
+## Example Usage
+![Commento Example 1](media/screenshot1.png)
+![Commento Example 2](media/screenshot2.png)
 
-This extension contributes the following settings:
+## Keyboard Shortcuts
+- `Ctrl + Shift + P` → Open Command Palette
+- `Ctrl + ,` (Windows/Linux) / `Cmd + ,` (Mac) → Open Settings
 
-- `commentov1.enable`: Enable or disable the comment generation feature.
-- `commentov1.template`: Customize the template used for generating comments.
+## Configuration
+You can configure Commento settings in VS Code:
+- `commento.apiKey`: Your Google Gemini API key.
+- `commento.includeExamples`: Enable/Disable usage examples in detailed comments.
 
 ## Known Issues
-
-- Some specific comment patterns might not be detected correctly on older codebases.
-- Occasional formatting issues when the template is heavily customized.
+- **Missing API Key:** If you forget to add your Google Gemini API key, the extension will not function correctly. Make sure to follow the setup steps and verify that your API key is correctly entered in the settings.
 
 ## Release Notes
+**Beta Version:** Commento is currently in beta, and we are actively working on improvements. Feedback and bug reports are welcome!
 
-### 1.0.0
+### Version 1.1.2
+- Improved user experience with a more intuitive interface.
+- Enhanced comment generation for better clarity and accuracy.
+- Added an option in settings to **Include usage examples in detailed comments**.
+- Minor bug fixes and performance optimizations.
 
-- Initial release of **commentov1** extension. Adds core comment generation and management features.
+## Change Log
+- **v1.1.3:** Improved UI, better comments, added example checkbox.
+- **v1.1.1:** Fixed API key validation issue.
+- **v1.1.0:** Initial public beta release.
 
-### 1.1.1-beta
+## Open Source Contribution
+This project is open-source! If you would like to contribute, check out the following links:
+- GitHub Repository: [Commento on GitHub](https://github.com/RoyRoki/commento.git)
+- VS Code Marketplace: [Commento Extension](https://marketplace.visualstudio.com/items?itemName=rokiroy.commento)
 
-- Fixed comment formatting for certain code snippets.
-- Improved template handling.
-⚠️ This is a beta version.
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Conclusion
+Commento helps streamline code documentation by generating meaningful comments quickly. Use `concise` for short explanations and `detailed` for in-depth documentation.
+
 ---
-
-## Following Extension Guidelines
-
-Ensure that you've read through the extension guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-- Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-- Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For More Information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+🚀 Made with Rocket Coding
